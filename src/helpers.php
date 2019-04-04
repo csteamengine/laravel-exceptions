@@ -16,44 +16,6 @@ if(! function_exists('get_upload_directory')){
     }
 }
 
-if(! function_exists('get_cart')) {
-    /**
-     * Helper to get the cart from either the session or by user name
-     *
-     * @return mixed
-     */
-    function get_cart(){
-        if(auth()->check()){
-            //use auth()->id
-            $cart = Cart::where('user_id', auth()->id())->where('is_cart', true)->first();
-            if(is_null($cart)){
-                $cart = new Cart([
-                    'title' => "Cart",
-                    'description' => "Default Cart",
-                    'user_id' => auth()->id(),
-                    'is_cart' => true,
-                    'is_active' => true,
-                ]);
-                $cart->save();
-            }
-        }else{
-            //use auth()->id
-            $cart = Cart::where('session_id', session()->getId())->where('is_cart', true)->first();
-            if(is_null($cart)){
-                $cart = new Cart([
-                    'title' => "Cart",
-                    'description' => "Default Cart",
-                    'session_id' => session()->getId(),
-                    'is_cart' => true,
-                    'is_active' => true,
-                ]);
-                $cart->save();
-            }
-        }
-        return $cart;
-    }
-}
-
 /*
  * Global helpers file with misc functions.
  */

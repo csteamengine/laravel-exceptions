@@ -21,10 +21,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Csteamengine\\ProjectManager\\": "src/"
+            "Csteamengine\\LaravelExceptions\\": "src/"
         },
         "files": [
-            "app/helpers.php"
+            "src/helpers.php"
         ]
     },
     "extra": {

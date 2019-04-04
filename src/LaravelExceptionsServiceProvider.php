@@ -1,6 +1,6 @@
 <?php
 
-namespace Csteamengine\TestComposerPackage;
+namespace Csteamengine\LaravelExceptions;
 
 use Illuminate\Support\ServiceProvider;
 
